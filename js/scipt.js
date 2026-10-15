@@ -26,4 +26,28 @@ document.addEventListener("DOMContentLoaded", ()=> {
         slides[slideAtual].classList.add("active");
         dots[slideAtual].classList.add("active");
     }
+
+    function nextSlide(){
+        showSlide(slideAtual + 1);
+    }
+    function prevSlide(){
+        showSlide(slideAtual - 1);
+    }
+    function startSlide(){
+        slideIntervalo = setInterval(nextSlide, 5000);
+    }
+    function stopSlide(){
+        clearInterval(slideIntervalo);
+    }
+    nextBtn.addEventListener("click", () =>{
+        nextSlide();
+        stopSlide();
+        startSlide();
+    });
+
+    prevBtn.addEventListener("click", () =>{
+        nextSlide();
+        stopSlide();
+        startSlide();
+    });
 }); //Fechamento do evento carregar página.

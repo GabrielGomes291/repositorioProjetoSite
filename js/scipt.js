@@ -50,4 +50,15 @@ document.addEventListener("DOMContentLoaded", ()=> {
         stopSlide();
         startSlide();
     });
+
+    dots.forEach((dot) =>{
+        dot.addEventListener("click", (e) =>{
+            const index = parseInt(e.target.getAttribute("data-index"));
+            showSlide(index);
+            stopSlide();
+            startSlide();
+        });
+    });
+
+    startSlide();
 }); //Fechamento do evento carregar página.
